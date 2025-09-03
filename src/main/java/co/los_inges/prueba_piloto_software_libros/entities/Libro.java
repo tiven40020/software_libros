@@ -31,4 +31,11 @@ public class Libro {
     @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Resenia> reseniaList = new ArrayList<>();
 
+    public Libro(Long id, String titulo, String isbn, String autor, BigDecimal precio) {
+        this.id = id;
+        this.titulo = titulo;
+        this.isbn = isbn;
+        this.autor = autor;
+        this.precio = precio;
+    }
 }
