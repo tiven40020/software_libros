@@ -20,7 +20,7 @@ public class Puntuacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String valor;
+    private int valor;
     @ManyToOne(optional = false) private Usuario usuario;
     @ManyToOne(optional = false) private Libro libro;
     private LocalDateTime fecha;

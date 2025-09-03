@@ -1,10 +1,7 @@
 package co.los_inges.prueba_piloto_software_libros.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -31,4 +28,59 @@ public class Libro {
     @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Resenia> reseniaList = new ArrayList<>();
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public BigDecimal getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(BigDecimal precio) {
+        this.precio = precio;
+    }
+
+    public List<Puntuacion> getPuntuacionList() {
+        return puntuacionList;
+    }
+
+    public void setPuntuacionList(List<Puntuacion> puntuacionList) {
+        this.puntuacionList = puntuacionList;
+    }
+
+    public List<Resenia> getReseniaList() {
+        return reseniaList;
+    }
+
+    public void setReseniaList(List<Resenia> reseniaList) {
+        this.reseniaList = reseniaList;
+    }
 }
